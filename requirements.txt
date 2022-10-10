@@ -1,8 +1,5 @@
-pandas
-nltk
-sklearn
-joblib
-string
-ast
-re
-streamlit
+pandas==1.5.0
+nltk==3.7
+sklearn==0.0
+joblib==1.2.0
+streamlit==1.13.0
