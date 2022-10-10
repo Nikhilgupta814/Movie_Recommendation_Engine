@@ -1,17 +1,12 @@
+import numpy as np
 import pandas as pd
+from nltk.stem import WordNetLemmatizer
 import nltk
-import re
 from nltk.corpus import stopwords
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.neighbors import KDTree
-import ast
-import string
-from nltk import WordNetLemmatizer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import joblib
-import warnings
-warnings.filterwarnings("ignore")
+import string, ast, re
 
 def convert(obj):
     A =[]
@@ -24,7 +19,7 @@ def Convert2(data):
     B=[]
     counter=0
     for i in ast.literal_eval(data):
-        if counter !=3:
+        if counter != 3 :
             B.append(i['name'])
             counter += 1
         else:
