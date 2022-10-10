@@ -42,8 +42,8 @@ Lem = WordNetLemmatizer()
 stopwords = stopwords.words('english') + list(string.punctuation) + ["'s", '--']
 CV = CountVectorizer( max_features=5000, stop_words='english')
 
-data1 = pd.read_csv(r'C:\Users\HP\OneDrive\Desktop\NLP\tmdb_5000_credits.csv')
-data2 = pd.read_csv(r'C:\Users\HP\OneDrive\Desktop\NLP\tmdb_5000_movies.csv')
+data1 = pd.read_csv('tmdb_5000_credits.csv')
+data2 = pd.read_csv('tmdb_5000_movies.csv')
 data = data1.merge(data2, on='title')
 
 movies = data[['movie_id','title','overview','genres','keywords','cast','crew']]
