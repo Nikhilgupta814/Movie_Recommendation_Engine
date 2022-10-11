@@ -32,41 +32,45 @@ movies  = pd.DataFrame(movie_dict)
 
 similarity = joblib.load('similarity.pkl')
 
-st.title('Movie Recommender System')
-st.subheader('Created by Nikhil Gupta')
-st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background-image: url("https://cdn.pixabay.com/photo/2019/04/24/11/27/flowers-4151900_960_720.jpg");
-             background-attachment: fixed;
-             background-size: cover
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
+def main():
+    st.title('Movie Recommender System')
+    st.subheader('Created by Nikhil Gupta')
+    st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background-image: url("https://cdn.pixabay.com/photo/2019/04/24/11/27/flowers-4151900_960_720.jpg");
+                background-attachment: fixed;
+                background-size: cover
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
 
-selected_movie = st.selectbox(
-    'Select Any Movies to Find Similar movies',
-    movies['title'].values
-    )
+    selected_movie = st.selectbox(
+        'Select Any Movies to Find Similar movies',
+        movies['title'].values
+        )
 
-if st.button('Recommend'):
-    name,poster = Recommendation(selected_movie)
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.text(name[0])
-        st.image(poster[0])
-    with col2:
-        st.text(name[1])
-        st.image(poster[1])
-    with col3:
-        st.text(name[2])
-        st.image(poster[2])
-    with col4:
-        st.text(name[3])
-        st.image(poster[3])
-    with col5:
-        st.text(name[4])
-        st.image(poster[4])
+    if st.button('Recommend'):
+        name,poster = Recommendation(selected_movie)
+        col1, col2, col3, col4, col5 = st.columns(5)
+        with col1:
+            st.text(name[0])
+            st.image(poster[0])
+        with col2:
+            st.text(name[1])
+            st.image(poster[1])
+        with col3:
+            st.text(name[2])
+            st.image(poster[2])
+        with col4:
+            st.text(name[3])
+            st.image(poster[3])
+        with col5:
+            st.text(name[4])
+            st.image(poster[4])
+
+if __name__=='__main__':
+    main()
