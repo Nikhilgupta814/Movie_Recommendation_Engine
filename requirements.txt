@@ -56,3 +56,14 @@ validators==0.20.0
 watchdog==2.1.9
 wincertstore==0.2
 zipp==3.9.0
+Flask==1.1.1
+gunicorn==19.9.0
+itsdangerous==1.1.0
+Jinja2==2.10.1
+MarkupSafe==1.1.1
+Werkzeug==0.15.5
+scipy>=0.15.1
+scikit-learn==0.22.1
+matplotlib>=1.4.3
+flasgger==0.9.4
+streamlit
